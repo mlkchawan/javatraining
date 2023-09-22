@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to Infinite wallet</title>
+</head>
+<body style="background-color:powderblue">
+
+<form action="Combine.jsp">
+<center>
+
+<p background="images/wallet.jpg">   
+
+<h1> WELCOME TO INFINITE WALLET </h1>
+<h2>Everything at one place</h2></center>
+<center>
+<input type="submit" value="enter" />
+
+</form>
+
+ </center>
+</p>
+</body>
+</html>
