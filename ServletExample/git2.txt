@@ -1,0 +1,87 @@
+<bean id="custAddress1" class="com.infinite.maven1.DateExample">
+
+		<property name="name" value="chawan" />
+		<property name="city" value="Chennai" />
+		<property name="date" value="27/10/2023" />
+	</bean>
+	<bean id="const" class="com.infinite.maven1.ConstructorEx">
+
+		<constructor-arg name="fullname" value="chawan" />
+		<constructor-arg name="id" value="27" />
+
+	</bean>
+	<bean id="const2" class="com.infinite.maven1.ConstructorEx">
+
+		<constructor-arg name="fullname" value="chawan" />
+		<constructor-arg name="id" value="27" />
+		<constructor-arg name="y" value="2007" />
+
+	</bean>
+	<bean id="const1" class="com.infinite.maven1.ConstructorEx">
+		<constructor-arg index="0" value="27" />
+		<constructor-arg index="1" value="chowen" />
+		<constructor-arg index="2" value="2001" />
+		</bean>
+    </beans>
+===
+
+package com.infinite.maven1;
+
+public class ConstructorEx {
+	private String fullname;
+	private int id;
+	private int y;
+	 ConstructorEx()
+	{}
+	ConstructorEx(int id,String fullname){
+		this.fullname=fullname;
+		this.id=id;
+	}
+	ConstructorEx(int id,String fullname,int y){
+		this.fullname=fullname;
+		this.id=id;
+		this.y=y;
+	}
+	public String displayName()
+	{
+		return (fullname+id);
+	}
+	public String display()
+	{
+		return (fullname+id+y);
+	}
+	public String display1()
+	{
+		return (fullname+id+y);
+	}
+
+
+}
+====
+
+package com.infinite.maven1;
+
+ 
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+ 
+
+public class ConstructorTest {
+
+ 
+
+	public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			AbstractApplicationContext context = new ClassPathXmlApplicationContext("Sample.xml");
+			ConstructorEx customer = (ConstructorEx) context.getBean("const");
+			ConstructorEx customer1 = (ConstructorEx) context.getBean("const1");
+			ConstructorEx customer2 = (ConstructorEx) context.getBean("const2");
+
+			System.out.println(customer.displayName());
+			System.out.println(customer1.display());
+			System.out.println(customer2.display1());
+			context.registerShutdownHook();
+		}
+	}
